@@ -23,7 +23,8 @@ __all__ = [
 
 class VGG16_Test(CustomTestCase):
 
-    def _set_up(self):
+    @classmethod
+    def setUpClass(cls):
 
         #######################################################################
         ####  =============    Placeholders Declaration      ============= ####
@@ -62,20 +63,21 @@ class VGG16_Test(CustomTestCase):
             img_raw = imread(test_image_path)
             img_resized = resize(img_raw, (224, 224), mode='reflect', anti_aliasing=False) * 255
 
-            self.net_out_probs = sess.run(network_reuse.outputs, feed_dict={input_plh: [img_resized]})[0]
+            cls.net_out_probs = sess.run(network_reuse.outputs, feed_dict={input_plh: [img_resized]})[0]
 
-            self.most_likely_classID = np.argmax(self.net_out_probs)
-            self.max_prob = self.net_out_probs[self.most_likely_classID]
+            cls.most_likely_classID = np.argmax(cls.net_out_probs)
+            cls.max_prob = cls.net_out_probs[cls.most_likely_classID]
 
-    def _tear_down(self):
+    @classmethod
+    def tearDownClass(cls):
 
         if tl.logging.get_verbosity() == tl.logging.DEBUG:
             print("\n\n###########################")
 
         tl.logging.debug("VGG Network: Most Likely Class: %d with a probability of: %.5f - Output Shape: %s" % (
-            self.most_likely_classID,
-            self.max_prob,
-            self.net_out_probs.shape
+            cls.most_likely_classID,
+            cls.max_prob,
+            cls.net_out_probs.shape
         ))
 
         if tl.logging.get_verbosity() == tl.logging.DEBUG:

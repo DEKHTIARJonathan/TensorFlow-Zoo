@@ -23,7 +23,8 @@ __all__ = [
 
 class MobileNet_Test(CustomTestCase):
 
-    def _set_up(self):
+    @classmethod
+    def setUpClass(cls):
 
         #######################################################################
         ####  =============    Placeholders Declaration      ============= ####
@@ -42,8 +43,8 @@ class MobileNet_Test(CustomTestCase):
 
         network_reuse = mobilenet(input_plh, is_train=False, reuse=True)
 
-        self.conv_shapes = MobileNet_Network.get_conv_layers(network_reuse)
-        self.output_shape = network_reuse.outputs.shape
+        cls.conv_shapes = MobileNet_Network.get_conv_layers(network_reuse)
+        cls.output_shape = network_reuse.outputs.shape
 
         network_reuse.print_layers()
         network_reuse.print_params(False)
@@ -52,11 +53,11 @@ class MobileNet_Test(CustomTestCase):
         ####  =============        Run a sample Batch        ============= ####
         #######################################################################
 
-        self.max_prob = dict()
-        self.net_out_probs = dict()
-        self.most_likely_classID = dict()
+        cls.max_prob = dict()
+        cls.net_out_probs = dict()
+        cls.most_likely_classID = dict()
 
-        self.test_classes = list()
+        cls.test_classes = list()
 
         with tf.Session() as sess:
             mobilenet.load_pretrained(sess)
@@ -70,7 +71,7 @@ class MobileNet_Test(CustomTestCase):
 
             for class_name, test_image in test_images:
 
-                self.test_classes.append(class_name)
+                cls.test_classes.append(class_name)
 
                 if os.getcwd().split(os.sep)[-1] != "tests":
                     test_image_path = 'tests/data/{}'.format(test_image)
@@ -89,25 +90,26 @@ class MobileNet_Test(CustomTestCase):
                         img_resized -= 0.5
                         img_resized *= 2.0  # Values in [-1, 1]
 
-                    self.net_out_probs["{}_{}".format(class_name, i)] = sess.run(
+                    cls.net_out_probs["{}_{}".format(class_name, i)] = sess.run(
                         network_reuse.outputs,
                         feed_dict={input_plh: [img_resized]}
                     )[0]
 
-                    self.most_likely_classID["{}_{}".format(class_name, i)] = np.argmax(
-                        self.net_out_probs["{}_{}".format(class_name, i)]
+                    cls.most_likely_classID["{}_{}".format(class_name, i)] = np.argmax(
+                        cls.net_out_probs["{}_{}".format(class_name, i)]
                     )
 
-                    self.max_prob["{}_{}".format(class_name, i)] = self.net_out_probs["{}_{}".format(class_name, i)][
-                        self.most_likely_classID["{}_{}".format(class_name, i)]
+                    cls.max_prob["{}_{}".format(class_name, i)] = cls.net_out_probs["{}_{}".format(class_name, i)][
+                        cls.most_likely_classID["{}_{}".format(class_name, i)]
                     ]
 
-    def _tear_down(self):
+    @classmethod
+    def tearDownClass(cls):
 
         if tl.logging.get_verbosity() == tl.logging.DEBUG:
             print("\n\n###########################")
 
-        for test_class in self.test_classes:
+        for test_class in cls.test_classes:
             for i in range(3):
 
                 if i == 0:
@@ -122,15 +124,15 @@ class MobileNet_Test(CustomTestCase):
                     "Output Shape: %s" % (
                         test_class,
                         val_range,
-                        self.most_likely_classID["{}_{}".format(test_class, i)],
-                        self.max_prob["{}_{}".format(test_class, i)],
-                        self.net_out_probs["{}_{}".format(test_class, i)].shape
+                        cls.most_likely_classID["{}_{}".format(test_class, i)],
+                        cls.max_prob["{}_{}".format(test_class, i)],
+                        cls.net_out_probs["{}_{}".format(test_class, i)].shape
                     ))
 
         if tl.logging.get_verbosity() == tl.logging.DEBUG:
             print()
 
-        for conv_shape in self.conv_shapes:
+        for conv_shape in cls.conv_shapes:
             tl.logging.debug(
                 "MobileNet Network: [%s] - Shape: %s" % (
                     conv_shape.name,

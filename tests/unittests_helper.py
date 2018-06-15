@@ -5,45 +5,10 @@ import unittest
 from unittest.util import strclass
 
 from contextlib import contextmanager
-import six
-
-from abc import ABCMeta, abstractmethod
 
 __all__ = [
-    'Abstract_TestCase',
     'CustomTestCase',
 ]
-
-
-@six.add_metaclass(ABCMeta)
-class Abstract_TestCase(object):
-
-    @abstractmethod
-    def _ANO_MODEL(self): raise NotImplementedError()
-
-    def assertEqual(self, expr, msg=None): raise NotImplementedError()
-
-    def assertEquals(self, expr, msg=None): raise NotImplementedError()
-
-    def assertNotEqual(self, expr, msg=None): raise NotImplementedError()
-
-    def assertNotEquals(self, expr, msg=None): raise NotImplementedError()
-
-    def assertAlmostEqual(self, expr, msg=None): raise NotImplementedError()
-
-    def assertAlmostEquals(self, expr, msg=None): raise NotImplementedError()
-
-    def assertNotAlmostEqual(self, expr, msg=None): raise NotImplementedError()
-
-    def assertNotAlmostEquals(self, expr, msg=None): raise NotImplementedError()
-
-    def assertRaises(self, expr, msg=None): raise NotImplementedError()
-
-    def assertNotRaises(self, expr, msg=None): raise NotImplementedError()
-
-    def assertTrue(self, expr, msg=None): raise NotImplementedError()
-
-    def assertFalse(self, expr, msg=None): raise NotImplementedError()
 
 
 class CustomTestCase(unittest.TestCase):
