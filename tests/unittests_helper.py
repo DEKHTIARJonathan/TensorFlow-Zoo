@@ -5,8 +5,9 @@ import unittest
 from unittest.util import strclass
 
 from contextlib import contextmanager
+import six
 
-from abc import ABC, abstractmethod
+from abc import ABCMeta, abstractmethod
 
 __all__ = [
     'Abstract_TestCase',
@@ -14,7 +15,8 @@ __all__ = [
 ]
 
 
-class Abstract_TestCase(ABC):
+@six.add_metaclass(ABCMeta)
+class Abstract_TestCase(object):
 
     @abstractmethod
     def _ANO_MODEL(self): raise NotImplementedError()
