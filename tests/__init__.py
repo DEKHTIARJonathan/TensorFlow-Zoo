@@ -1,4 +1,5 @@
-from .utils import list_all_py_files
+#! /usr/bin/python
+# -*- coding: utf-8 -*-
 
 from .test_vgg16 import VGG16_Test
 from .test_inceptionV4 import InceptionV4_Test

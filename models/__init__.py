@@ -1,3 +1,6 @@
+#! /usr/bin/python
+# -*- coding: utf-8 -*-
+
 from .inceptionV4 import InceptionV4_Network
 from .mobilenet import MobileNet_Network
 from .squeezenet import SqueezeNet_Network
