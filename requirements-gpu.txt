@@ -1,0 +1,5 @@
+numpy==1.14.3
+pytest==3.6.1
+sphinx==1.7.5
+tensorflow-gpu==1.8.0
+tensorlayer==1.8.6rc5
