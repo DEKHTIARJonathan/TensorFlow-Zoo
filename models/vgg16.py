@@ -289,7 +289,13 @@ class VGG_Network(object):
         ckpt_path = os.path.join(os.path.realpath(__file__)[:-16], ckpt_path)
 
         if not os.path.isfile(ckpt_path):
-            raise FileNotFoundError("The file `%s` can not be found." % ckpt_path)
+            raise FileNotFoundError(
+                "The file `%s` can not be found.\n
+                "Please download the checkpoint file at the following URL: %s" % (
+                    ckpt_path,
+                    'http://www.smarter-engineering.com/models/vgg16.ckpt'
+                )
+            )
 
         saver = tf.train.Saver(self.network.all_params)
         saver.restore(sess, ckpt_path)
