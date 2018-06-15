@@ -174,7 +174,7 @@ class MobileNet_Network(object):
 
         if not os.path.isfile(ckpt_path):
             raise FileNotFoundError(
-                "The file `%s` can not be found.\n
+                "The file `%s` can not be found.\n"
                 "Please download the checkpoint file at the following URL: %s" % (
                     ckpt_path,
                     'http://www.smarter-engineering.com/models/mobilenet.ckpt'
