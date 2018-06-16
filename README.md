@@ -10,7 +10,7 @@ This project is compatible and tested with the following versions of:
 
 ## Model Zoo
 
-Model | TF-Slim File | Checkpoint | Top-1 Accuracy| Top-5 Accuracy |
+Model | Model File | Checkpoint | Top-1 Accuracy| Top-5 Accuracy |
 :----:|:------------:|:----------:|:-------:|:--------:|
 [Inception V4](https://arxiv.org/abs/1602.07261)|[Code](https://github.com/DEKHTIARJonathan/TensorFlow-TensorLayer-Zoo/blob/master/models/inceptionV4.py)|[inception_v4.ckpt](http://www.smarter-engineering.com/models/inception_v4.ckpt)|80.2|95.2|
 [VGG 16](https://arxiv.org/abs/1409.1556)|[Code](https://github.com/DEKHTIARJonathan/TensorFlow-TensorLayer-Zoo/blob/master/models/vgg16.py)|[vgg16.ckpt](http://www.smarter-engineering.com/models/vgg16.ckpt)|71.5|89.8|
