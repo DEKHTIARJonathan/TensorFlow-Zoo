@@ -1,4 +1,4 @@
 numpy==1.14.5
 pytest==3.6.1
 tensorflow==1.8.0
-tensorlayer==1.8.6rc5
+tensorlayer==1.8.6rc6
