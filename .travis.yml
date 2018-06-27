@@ -40,8 +40,8 @@ install:
 script:
   # units test
   # https://docs.pytest.org/en/latest/
-  - wget http://www.smarter-engineering.com/models/inception_v4.ckpt -O weights/inception_v4.ckpt
-  - wget http://www.smarter-engineering.com/models/vgg16.ckpt -O weights/vgg16.ckpt
-  - wget http://www.smarter-engineering.com/models/mobilenet.ckpt -O weights/mobilenet.ckpt
-  - wget http://www.smarter-engineering.com/models/squeezenet.ckpt -O weights/squeezenet.ckpt
+  - wget https://engineering-ai.com/models/inception_v4.ckpt -O weights/inception_v4.ckpt
+  - wget https://engineering-ai.com/models/vgg16.ckpt -O weights/vgg16.ckpt
+  - wget https://engineering-ai.com/models/mobilenet.ckpt -O weights/mobilenet.ckpt
+  - wget https://engineering-ai.com/models/squeezenet.ckpt -O weights/squeezenet.ckpt
   - pytest

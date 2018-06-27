@@ -12,10 +12,10 @@ This project is compatible and tested with the following versions of:
 
 Model | Model File | Checkpoint | Top-1 Accuracy| Top-5 Accuracy |
 :----:|:------------:|:----------:|:-------:|:--------:|
-[Inception V4](https://arxiv.org/abs/1602.07261)|[Code](https://github.com/DEKHTIARJonathan/TensorFlow-TensorLayer-Zoo/blob/master/models/inceptionV4.py)|[inception_v4.ckpt](http://www.smarter-engineering.com/models/inception_v4.ckpt)|80.2|95.2|
-[VGG 16](https://arxiv.org/abs/1409.1556)|[Code](https://github.com/DEKHTIARJonathan/TensorFlow-TensorLayer-Zoo/blob/master/models/vgg16.py)|[vgg16.ckpt](http://www.smarter-engineering.com/models/vgg16.ckpt)|71.5|89.8|
-[MobileNet_v1_1.0_224](https://arxiv.org/abs/1704.04861)|[Code](https://github.com/DEKHTIARJonathan/TensorFlow-TensorLayer-Zoo/blob/master/models/mobilenet.py)|[mobilenet.ckpt](http://www.smarter-engineering.com/models/mobilenet.ckpt)|70.9|89.9|
-[SqueezeNet](https://arxiv.org/abs/1602.07360)|[Code](https://github.com/DEKHTIARJonathan/TensorFlow-TensorLayer-Zoo/blob/master/models/squeezenet.py)|[squeezenet.ckpt](http://www.smarter-engineering.com/models/squeezenet.ckpt)|Unknown|Unknown|
+[Inception V4](https://arxiv.org/abs/1602.07261)|[Code](https://github.com/DEKHTIARJonathan/TensorFlow-TensorLayer-Zoo/blob/master/models/inceptionV4.py)|[inception_v4.ckpt](https://engineering-ai.com/models/inception_v4.ckpt)|80.2|95.2|
+[VGG 16](https://arxiv.org/abs/1409.1556)|[Code](https://github.com/DEKHTIARJonathan/TensorFlow-TensorLayer-Zoo/blob/master/models/vgg16.py)|[vgg16.ckpt](https://engineering-ai.com/models/vgg16.ckpt)|71.5|89.8|
+[MobileNet_v1_1.0_224](https://arxiv.org/abs/1704.04861)|[Code](https://github.com/DEKHTIARJonathan/TensorFlow-TensorLayer-Zoo/blob/master/models/mobilenet.py)|[mobilenet.ckpt](https://engineering-ai.com/models/mobilenet.ckpt)|70.9|89.9|
+[SqueezeNet](https://arxiv.org/abs/1602.07360)|[Code](https://github.com/DEKHTIARJonathan/TensorFlow-TensorLayer-Zoo/blob/master/models/squeezenet.py)|[squeezenet.ckpt](https://engineering-ai.com/models/squeezenet.ckpt)|Unknown|Unknown|
 
 ## Project Installation
 

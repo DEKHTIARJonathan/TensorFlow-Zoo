@@ -177,7 +177,7 @@ class MobileNet_Network(object):
                 "The file `%s` can not be found.\n"
                 "Please download the checkpoint file at the following URL: %s" % (
                     ckpt_path,
-                    'http://www.smarter-engineering.com/models/mobilenet.ckpt'
+                    'https://engineering-ai.com/models/mobilenet.ckpt'
                 )
             )
 
