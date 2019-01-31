@@ -1,5 +1,5 @@
 numpy>=1.14,<1.17
-pytest>=4.1,<4.2
+pytest==4.2.0
 sphinx>=1.7,<1.9
 tensorflow>=1.12,<1.13
 tensorlayer>=1.9,<1.12
